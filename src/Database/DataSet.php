@@ -15,7 +15,7 @@ use PHPUnit\DbUnit\DataSet\DefaultTableMetadata;
 use PHPUnit\DbUnit\DataSet\ITableMetadata;
 use PHPUnit\DbUnit\InvalidArgumentException;
 use PHPUnit\DbUnit\RuntimeException;
-
+use PHPUnit\DbUnit\DataSet\ITable;
 /**
  * Provides access to a database instance as a data set.
  */
@@ -96,7 +96,7 @@ class DataSet extends AbstractDataSet
      *
      * @return Table
      */
-    public function getTable($tableName)
+    public function getTable($tableName): ITable
     {
         if (!\in_array($tableName, $this->getTableNames())) {
             throw new InvalidArgumentException("$tableName is not a table in the current database.");
@@ -116,7 +116,7 @@ class DataSet extends AbstractDataSet
      *
      * @return DefaultTableMetadata
      */
-    public function getTableMetaData($tableName)
+    public function getTableMetaData($tableName): ITableMetadata
     {
         return new DefaultTableMetadata($tableName, $this->databaseConnection->getMetaData()->getTableColumns($tableName), $this->databaseConnection->getMetaData()->getTablePrimaryKeys($tableName));
     }

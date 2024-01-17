@@ -35,7 +35,7 @@ class ReplacementDataSet extends AbstractDataSet
     /**
      * Creates a new replacement dataset
      *
-     * You can pass in any data set that implements PHPUnit_Extensions_Database_DataSet_IDataSet
+     * You can pass in any data set that implements PHPUnit\DbUnit\DataSet\IDataSet
      *
      * @param string $delimiter
      * @param string $enclosure

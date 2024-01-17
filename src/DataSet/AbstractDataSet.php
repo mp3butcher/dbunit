@@ -52,7 +52,7 @@ abstract class AbstractDataSet implements IDataSet
      *
      * @return ITableMetadata
      */
-    public function getTableMetaData($tableName)
+    public function getTableMetaData($tableName): ITableMetadata
     {
         return $this->getTable($tableName)->getTableMetaData();
     }
@@ -64,7 +64,7 @@ abstract class AbstractDataSet implements IDataSet
      *
      * @return ITable
      */
-    public function getTable($tableName)
+    public function getTable($tableName): ITable
     {
         foreach ($this->getIterator() as $table) {
             /* @var $table ITable */
@@ -79,7 +79,7 @@ abstract class AbstractDataSet implements IDataSet
      *
      * @return ITableIterator
      */
-    public function getIterator()
+    public function getIterator(): ITableIterator
     {
         return $this->createIterator();
     }
@@ -89,7 +89,7 @@ abstract class AbstractDataSet implements IDataSet
      *
      * @return ITableIterator
      */
-    public function getReverseIterator()
+    public function getReverseIterator(): ITableIterator
     {
         return $this->createIterator(true);
     }

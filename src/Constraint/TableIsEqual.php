@@ -67,7 +67,7 @@ class TableIsEqual extends Constraint
     {
         if (!$other instanceof ITable) {
             throw new InvalidArgumentException(
-                'PHPUnit_Extensions_Database_DataSet_ITable expected'
+                'PHPUnit\DbUnit\DataSet\ITable expected'
             );
         }
 

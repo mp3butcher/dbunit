@@ -36,7 +36,6 @@ class DataSetIsEqual extends Constraint
      */
     public function __construct(IDataSet $value)
     {
-        parent::__construct();
         $this->value = $value;
     }
 
@@ -67,7 +66,7 @@ class DataSetIsEqual extends Constraint
     {
         if (!$other instanceof IDataSet) {
             throw new InvalidArgumentException(
-                'PHPUnit_Extensions_Database_DataSet_IDataSet expected'
+                'PHPUnit\DbUnit\DataSet\IDataSet expected'
             );
         }
 
